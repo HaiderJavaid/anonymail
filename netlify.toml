@@ -1,0 +1,13 @@
+[build]
+  command = "pnpm zip && pnpm --filter @anonymail/site build"
+  publish = "apps/site/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "11.9.0"
+
+[[headers]]
+  for = "/downloads/*.zip"
+  [headers.values]
+    Content-Type = "application/zip"
+    Content-Disposition = "attachment"

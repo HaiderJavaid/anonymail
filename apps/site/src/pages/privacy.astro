@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const downloadHref = '/downloads/anonymail-beta.zip';
+---
+<BaseLayout title="Privacy — Anonymail" description="Plain-English privacy policy for the Anonymail Chrome extension.">
+  <header class="site-header wrap"><a class="logo" href="/"><img src="/anonymail.png" alt="" /><span>Anonymail</span></a><nav><a href="/">Home</a><a class="nav-cta" href={downloadHref} download>Download latest beta</a></nav></header>
+  <main class="policy wrap">
+    <p class="kicker"><span></span> Effective July 26, 2026</p>
+    <h1>Privacy, in plain English.</h1>
+    <p class="policy-lead">Anonymail is designed to know as little about you as possible. Version 0.1 has no Anonymail account, analytics, advertising, or cloud sync.</p>
+    <section><h2>What stays on your device</h2><p>Your chosen inbox mode, lifetime preference, active Mail.tm address, provider credential, and access token are stored in Chrome extension storage. Generated signup passwords remain in temporary session memory for the mailbox lifetime and are never synced. “Until deleted” passwords last only for the current Chrome session.</p></section>
+    <section><h2>What is sent to Mail.tm</h2><p>The extension sends the generated disposable address and provider-only password when creating a mailbox. It later sends the mailbox token to retrieve, read, and delete messages. Review Mail.tm’s own terms and privacy information before use.</p></section>
+    <section><h2>What Anonymail does not collect</h2><p>We do not collect browsing history, page content, signup URLs, form values, received messages, analytics identifiers, advertising data, or payment information. This static website does not use analytics or cookies.</p></section>
+    <section><h2>Tutorial video</h2><p>The landing page embeds the installation tutorial using YouTube’s privacy-enhanced domain and lazy loading. When the player loads or you interact with it, your browser connects to YouTube and Google, whose privacy terms apply.</p></section>
+    <section><h2>Website access</h2><p>Anonymail uses Chrome’s active-tab permission only after you invoke its toolbar or context-menu action. It does not request permanent access to every website.</p></section>
+    <section><h2>Retention and deletion</h2><p>When a timed mailbox expires, Anonymail clears it locally and asks Mail.tm to delete the provider account. If offline, deletion is retried later. “Until deleted” disables Anonymail’s timer, but Mail.tm may independently remove inactive mailboxes.</p></section>
+    <section><h2>Security limits</h2><p>Disposable email is not suitable for banking, healthcare, government, recovery accounts, or other sensitive services. HTML mail is sanitized, remote images and attachments are blocked, and no service can guarantee delivery or acceptance by third-party websites.</p></section>
+    <section><h2>Contact and changes</h2><p>Before public store release, a support email and repository issue tracker will be added here. Material changes to data handling will be disclosed before they take effect.</p></section>
+  </main>
+  <footer class="wrap"><a class="logo" href="/"><img src="/anonymail.png" alt="" /><span>Anonymail</span></a><p>Private signups, quietly handled.</p></footer>
+</BaseLayout>

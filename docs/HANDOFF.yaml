@@ -1,0 +1,45 @@
+project: Anonymail
+local_path: /Users/kinghaider/Desktop/anonymail
+stage: MVP beta
+current_status: implementation_complete
+risks:
+  - Mail.tm availability and disposable-domain blocking are outside Anonymail's control.
+  - activeTab field targeting is intentionally less reliable than persistent all-site access.
+  - Mail.tm may remove mailboxes even when Anonymail uses until-deleted mode.
+verification:
+  build: passed
+  typecheck: passed
+  lint: passed
+  tests: 28 passed
+  visual_qa: passed
+  chrome_developer_mode_install: manual verification required
+done:
+  - Product requirements and privacy defaults locked.
+  - Manifest V3 extension and shared inbox UI implemented.
+  - Mail.tm integration, expiry, deletion retry, polling, badge, and autofill implemented.
+  - Static landing and privacy pages implemented.
+  - Developer-mode beta ZIP packaged.
+  - Empty, loading, populated, and settings states refined for the side panel.
+  - Smart form classifier and opt-in dummy identity/address filling implemented without remote page analysis.
+  - Message reading is resilient to Mail.tm mark-read failures and uses the documented bodyless PATCH request.
+  - New mailbox names are compact; unread badges are red and unread rows are bold.
+  - New mailboxes use six-character local-parts and the shortest active Mail.tm domain offered on the first provider page.
+  - Message rows show received time, support bulk selection/deletion, and become read immediately when opened.
+  - Read markers persist in trusted session storage so badge counts do not rebound during provider synchronization.
+  - Dashboard and side panel use the same single-pane reader flow; sanitized email CSS renders inside a network-blocked sandbox.
+  - First activation after installation opens the side panel in Settings once; later surface launches begin in Inbox.
+  - Mailbox creation and autofill use a visible 500 ms generation phase; in-page completion feedback is centered.
+  - Signup-password session retention follows the active mailbox lifetime and clears with mailbox deletion or expiry.
+  - Extension and landing-page branding use the refreshed metallic mask-envelope icon.
+  - Landing feature cards use the requested clips for right-click fill, side-panel use, and mailbox lifetime controls; heading tracking is relaxed.
+  - The install section uses the requested privacy-enhanced YouTube tutorial player; hero type is slightly smaller.
+  - Toolbar activation uses Chrome's native side-panel behavior; first install opens a setup dashboard because Chrome requires a gesture before opening a side panel.
+  - Deleting a mailbox and saving settings return to Inbox; empty state copy now explains right-click creation and uses “Create disposable email.”
+  - Search was removed from extension surfaces and the landing mockup.
+  - The landing installation tutorial is smaller, centered, and has a centered download instruction/action stack.
+  - Landing download CTAs now point through a shared latest-beta ZIP path with a visible beta strip.
+  - Netlify config builds the latest extension ZIP before building the Astro site.
+next_steps:
+  - Manually load the packaged extension in Chrome and run the acceptance checklist.
+  - Push the repo to GitHub when a remote repository is available.
+  - Connect the GitHub repository to Netlify and deploy the static site.

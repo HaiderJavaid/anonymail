@@ -1,0 +1,22 @@
+{
+  "name": "@anonymail/site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "typecheck": "astro check",
+    "lint": "astro check",
+    "test": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.1.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0"
+  }
+}

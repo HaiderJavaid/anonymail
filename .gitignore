@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+.DS_Store
+dist/
+.astro/
+.wxt/
+.output/
+coverage/
+playwright-report/
+test-results/
+.playwright-cli/
+apps/site/public/downloads/*.zip
