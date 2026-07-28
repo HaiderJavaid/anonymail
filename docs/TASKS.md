@@ -15,7 +15,7 @@
 - [x] Harden side-panel activation, post-action Inbox routing, empty-state copy, and tutorial layout.
 - [x] Prepare latest-beta download links and Netlify build config.
 - [x] Publish beta v0.1.1 through GitHub-backed Netlify deployment.
-- [x] Add replaying landing-section reveals, interactive feature cards, and adaptive sticky navigation.
+- [x] Add replaying staggered landing choreography, interactive feature cards, and adaptive sticky navigation.
 
 ## Later
 

@@ -15,7 +15,7 @@ deployment:
   host: netlify
   production_url: https://anony-mail.netlify.app
   branch: main
-  feature_commit: b68cc3d
+  feature_commit: 9733db6
   pushed: true
   production_verified: true
   automatic_github_deploys: true
@@ -53,9 +53,10 @@ done:
   - Landing download CTAs now point through a shared latest-beta ZIP path with a visible beta strip.
   - Netlify config builds the latest extension ZIP before building the Astro site.
   - Beta v0.1.1 is published from GitHub main through Netlify with a verified downloadable extension ZIP.
-  - Landing sections replay slow reveals on viewport re-entry; feature cards expand/recolor on hover; sticky navigation adapts to light and dark page sections.
+  - Landing sections replay deliberate child-by-child choreography without animation blur; hero copy leads and the product preview arrives last.
+  - Feature cards expand/recolor on hover; sticky navigation adapts to light and dark page sections.
   - Landing animation honors reduced-motion preferences and uses no external runtime.
 next_steps:
   - Manually load the packaged extension in Chrome and run the acceptance checklist.
-  - Gather feedback on landing motion timing and feature-card hover intensity.
+  - Gather feedback on stagger timing and feature-card hover intensity.
   - Prepare Chrome Web Store publication after Developer Mode validation.

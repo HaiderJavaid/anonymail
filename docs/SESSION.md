@@ -35,6 +35,7 @@ Started: 2026-07-24 · Updated: 2026-07-28
 - Removed inbox search from the extension and landing mockup.
 - Reduced and centered the landing tutorial player, supporting copy, and download action.
 - Published beta v0.1.1 from GitHub `main` to the GitHub-connected Netlify production site.
-- Added slow replaying section reveals, subtle expanding/recoloring feature-card hover states, and sticky navigation that switches contrast over the dark installation section.
+- Replaced whole-section blur/fade reveals with replaying one-by-one choreography: hero copy leads, the product preview arrives last, and later content/cards stagger individually.
+- Kept subtle expanding/recoloring feature-card hover states and sticky navigation that switches contrast over the dark installation section.
 - Honored `prefers-reduced-motion`; landing motion uses only local browser APIs and CSS.
-- Verified tests, lint, typecheck, production build, GitHub push, and Netlify production deployment for landing commit `b68cc3d`.
+- Verified tests, lint, typecheck, production build, GitHub push, and Netlify production deployment for refined landing-motion commit `9733db6`.
