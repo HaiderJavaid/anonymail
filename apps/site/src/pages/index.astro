@@ -5,13 +5,13 @@ const downloadHref = '/downloads/anonymail-beta.zip';
 const betaVersion = 'v0.1.1';
 ---
 <BaseLayout title="Anonymail — a quiet disposable inbox for Chrome" description="Create one disposable inbox, fill signup forms, and read verification mail without leaving the page.">
-  <header class="site-header wrap">
+  <header class="site-header landing-header wrap" data-adaptive-nav>
     <a class="logo" href="/" aria-label="Anonymail home"><img src="/anonymail.png" alt="" /><span>Anonymail</span></a>
     <nav aria-label="Main navigation"><a href="#how">How it works</a><a href="/privacy">Privacy</a><a class="nav-cta" href={downloadHref} download>Download latest beta</a></nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="hero wrap" data-reveal>
       <div class="hero-copy">
         <p class="kicker"><span></span> Free privacy beta for Chrome</p>
         <h1>A disposable inbox that stays beside you.</h1>
@@ -50,9 +50,9 @@ const betaVersion = 'v0.1.1';
       </div>
     </section>
 
-    <section class="trust-strip"><div class="wrap"><span>Explicit website access</span><span>Separate mailbox and signup secrets</span><span>Automatic expiry</span><span>Powered by Mail.tm</span></div></section>
+    <section class="trust-strip" data-reveal><div class="wrap"><span>Explicit website access</span><span>Separate mailbox and signup secrets</span><span>Automatic expiry</span><span>Powered by Mail.tm</span></div></section>
 
-    <section id="how" class="section wrap">
+    <section id="how" class="section wrap" data-reveal>
       <p class="kicker"><span></span> A smaller privacy ritual</p>
       <div class="section-heading"><h2>From signup to verification without changing context.</h2><p>Anonymail stays intentionally narrow: one inbox, one clear action, and no permanent access to every site you visit.</p></div>
       <div class="feature-grid">
@@ -71,7 +71,7 @@ const betaVersion = 'v0.1.1';
       </div>
     </section>
 
-    <section id="install" class="install-section">
+    <section id="install" class="install-section" data-reveal data-nav-theme="dark">
       <div class="wrap">
         <div class="tutorial-intro">
           <p class="kicker light"><span></span> Installation tutorial</p>
@@ -85,11 +85,48 @@ const betaVersion = 'v0.1.1';
       </div>
     </section>
 
-    <section class="privacy-section wrap">
+    <section class="privacy-section wrap" data-reveal>
       <div><p class="kicker"><span></span> Privacy promise</p><h2>Your browsing stays in your browser.</h2></div>
       <div><p>Anonymail does not collect analytics, browsing history, signup URLs, or form contents. Mailbox operations go directly from the extension to Mail.tm.</p><a href="/privacy">Read the plain-English privacy policy →</a></div>
     </section>
   </main>
 
   <footer class="wrap"><a class="logo" href="/"><img src="/anonymail.png" alt="" /><span>Anonymail</span></a><p>Private signups, quietly handled.</p><div><a href="/privacy">Privacy</a><a href="https://mail.tm" target="_blank" rel="noreferrer">Mail.tm</a></div></footer>
+
+  <script>
+    const revealItems = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    document.documentElement.classList.add('reveal-ready');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) entry.target.classList.toggle('is-visible', entry.isIntersecting);
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const header = document.querySelector<HTMLElement>('[data-adaptive-nav]');
+    const darkSections = [...document.querySelectorAll<HTMLElement>('[data-nav-theme="dark"]')];
+    let navFrame = 0;
+
+    const updateNavigation = () => {
+      navFrame = 0;
+      if (!header) return;
+      const isStuck = window.scrollY > 24;
+      const navY = header.getBoundingClientRect().top + (header.offsetHeight / 2);
+      const overDarkSection = darkSections.some((section) => {
+        const bounds = section.getBoundingClientRect();
+        return navY >= bounds.top && navY <= bounds.bottom;
+      });
+      header.classList.toggle('is-stuck', isStuck);
+      header.classList.toggle('nav-over-dark', isStuck && overDarkSection);
+    };
+
+    const scheduleNavigationUpdate = () => {
+      if (navFrame) return;
+      navFrame = window.requestAnimationFrame(updateNavigation);
+    };
+
+    updateNavigation();
+    window.addEventListener('scroll', scheduleNavigationUpdate, { passive: true });
+    window.addEventListener('resize', scheduleNavigationUpdate);
+  </script>
 </BaseLayout>
