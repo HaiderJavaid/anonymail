@@ -1,11 +1,24 @@
-project: Anonymail
-local_path: /Users/kinghaider/Desktop/anonymail
-stage: MVP beta
-current_status: implementation_complete
-risks:
+date: 2026-07-28
+project:
+  name: Anonymail
+  local_path: /Users/kinghaider/Desktop/anonymail
+  github_repo: https://github.com/HaiderJavaid/anonymail.git
+  stage: live_MVP_beta
+status:
+  current: implementation_complete_and_deployed
+  release: v0.1.1
+  current_risks:
   - Mail.tm availability and disposable-domain blocking are outside Anonymail's control.
   - activeTab field targeting is intentionally less reliable than persistent all-site access.
   - Mail.tm may remove mailboxes even when Anonymail uses until-deleted mode.
+deployment:
+  host: netlify
+  production_url: https://anony-mail.netlify.app
+  branch: main
+  feature_commit: b68cc3d
+  pushed: true
+  production_verified: true
+  automatic_github_deploys: true
 verification:
   build: passed
   typecheck: passed
@@ -39,7 +52,10 @@ done:
   - The landing installation tutorial is smaller, centered, and has a centered download instruction/action stack.
   - Landing download CTAs now point through a shared latest-beta ZIP path with a visible beta strip.
   - Netlify config builds the latest extension ZIP before building the Astro site.
+  - Beta v0.1.1 is published from GitHub main through Netlify with a verified downloadable extension ZIP.
+  - Landing sections replay slow reveals on viewport re-entry; feature cards expand/recolor on hover; sticky navigation adapts to light and dark page sections.
+  - Landing animation honors reduced-motion preferences and uses no external runtime.
 next_steps:
   - Manually load the packaged extension in Chrome and run the acceptance checklist.
-  - Push the repo to GitHub when a remote repository is available.
-  - Connect the GitHub repository to Netlify and deploy the static site.
+  - Gather feedback on landing motion timing and feature-card hover intensity.
+  - Prepare Chrome Web Store publication after Developer Mode validation.

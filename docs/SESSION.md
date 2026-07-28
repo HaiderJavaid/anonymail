@@ -1,6 +1,6 @@
 # Session
 
-Started: 2026-07-24 · Updated: 2026-07-26
+Started: 2026-07-24 · Updated: 2026-07-28
 
 - Started the empty Anonymail workspace.
 - Confirmed product choices: Mail.tm prototype, ZIP beta, local receive-only MVP, side-panel default, privacy-user positioning.
@@ -34,3 +34,7 @@ Started: 2026-07-24 · Updated: 2026-07-26
 - Replaced the empty mailbox copy with a concise right-click/manual creation prompt and “Create disposable email.”
 - Removed inbox search from the extension and landing mockup.
 - Reduced and centered the landing tutorial player, supporting copy, and download action.
+- Published beta v0.1.1 from GitHub `main` to the GitHub-connected Netlify production site.
+- Added slow replaying section reveals, subtle expanding/recoloring feature-card hover states, and sticky navigation that switches contrast over the dark installation section.
+- Honored `prefers-reduced-motion`; landing motion uses only local browser APIs and CSS.
+- Verified tests, lint, typecheck, production build, GitHub push, and Netlify production deployment for landing commit `b68cc3d`.

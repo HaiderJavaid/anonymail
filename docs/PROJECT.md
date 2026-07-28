@@ -14,3 +14,4 @@ Anonymail helps privacy-conscious Chrome users create and use a disposable mailb
 - First user activation after installation leads to one-time side-panel setup; normal surface launches begin in Inbox.
 - Signup-password retention follows the mailbox lifetime without leaving trusted session storage.
 - Toolbar activation reliably opens the configured surface; deletion and settings completion always return to Inbox.
+- The landing page uses restrained replaying section reveals, responsive feature-card hover feedback, and a sticky navigation theme that maintains contrast over light and dark sections.
