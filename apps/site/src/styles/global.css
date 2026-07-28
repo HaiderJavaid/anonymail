@@ -66,8 +66,17 @@ a { color: inherit; }
 .feature-grid article > div { padding: 22px 24px 25px; }
 .feature-grid b { font: 650 14px ui-monospace, SFMono-Regular, Menlo, monospace; }
 .feature-grid p { min-height: 62px; margin: 34px 0 0; color: #74808e; font-size: 12px; line-height: 1.7; }
-.reveal-ready [data-reveal] { opacity: 0; filter: blur(3px); transform: translateY(42px); transition: opacity 1.05s cubic-bezier(.2,.72,.2,1), transform 1.05s cubic-bezier(.2,.72,.2,1), filter 1.05s ease; }
-.reveal-ready [data-reveal].is-visible { opacity: 1; filter: none; transform: translateY(0); }
+.reveal-ready [data-reveal-item] { opacity: 0; translate: 0 24px; scale: .995; transition: opacity .24s ease, translate .24s ease, scale .24s ease; }
+.reveal-ready [data-reveal-emphasis] { translate: 0 34px; }
+.reveal-ready [data-reveal-product] { translate: 0 30px; scale: .975; }
+.reveal-ready [data-reveal-group].is-visible [data-reveal-item] { opacity: 1; translate: 0 0; scale: 1; transition-duration: .88s; transition-timing-function: cubic-bezier(.22,1,.36,1); transition-delay: calc(var(--reveal-step, 0) * 105ms + 50ms); }
+[data-reveal-step="0"] { --reveal-step: 0; }
+[data-reveal-step="1"] { --reveal-step: 1; }
+[data-reveal-step="2"] { --reveal-step: 2; }
+[data-reveal-step="3"] { --reveal-step: 3; }
+[data-reveal-step="4"] { --reveal-step: 4; }
+[data-reveal-step="5"] { --reveal-step: 5; }
+[data-reveal-step="6"] { --reveal-step: 6; }
 .install-section { padding-block: 110px; background: var(--ink); color: white; }
 .kicker.light, .section-heading.light p { color: #9ca6b3; }
 .kicker.light span { background: white; }
@@ -119,6 +128,6 @@ footer div { display: flex; gap: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .landing-header, .feature-grid article, .reveal-ready [data-reveal] { transition: none; }
-  .reveal-ready [data-reveal] { opacity: 1; filter: none; transform: none; }
+  .landing-header, .feature-grid article, .reveal-ready [data-reveal-item] { transition: none; }
+  .reveal-ready [data-reveal-item] { opacity: 1; translate: none; scale: 1; }
 }

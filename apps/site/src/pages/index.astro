@@ -11,24 +11,24 @@ const betaVersion = 'v0.1.1';
   </header>
 
   <main>
-    <section class="hero wrap" data-reveal>
+    <section class="hero wrap" data-reveal-group>
       <div class="hero-copy">
-        <p class="kicker"><span></span> Free privacy beta for Chrome</p>
-        <h1>A disposable inbox that stays beside you.</h1>
-        <p class="hero-body">Right-click a signup field. Anonymail creates a private address, generates a different password, fills the form, and keeps verification mail in a calm side panel.</p>
-        <div class="hero-actions">
+        <p class="kicker" data-reveal-item data-reveal-step="0"><span></span> Free privacy beta for Chrome</p>
+        <h1 data-reveal-item data-reveal-step="1" data-reveal-emphasis>A disposable inbox that stays beside you.</h1>
+        <p class="hero-body" data-reveal-item data-reveal-step="2">Right-click a signup field. Anonymail creates a private address, generates a different password, fills the form, and keeps verification mail in a calm side panel.</p>
+        <div class="hero-actions" data-reveal-item data-reveal-step="3">
           <a class="button primary" href={downloadHref} download>Download latest beta</a>
           <a class="button secondary" href="#install">See installation steps</a>
         </div>
-        <div class="beta-bar" aria-label={`Latest beta ${betaVersion}`}>
+        <div class="beta-bar" aria-label={`Latest beta ${betaVersion}`} data-reveal-item data-reveal-step="4">
           <span>Latest beta</span>
           <b>{betaVersion}</b>
           <a href={downloadHref} download>Developer Mode ZIP</a>
         </div>
-        <p class="microcopy">No account · No analytics · One active inbox</p>
+        <p class="microcopy" data-reveal-item data-reveal-step="5">No account · No analytics · One active inbox</p>
       </div>
 
-      <div class="product-stage" aria-label="Anonymail dashboard preview">
+      <div class="product-stage" aria-label="Anonymail dashboard preview" data-reveal-item data-reveal-step="6" data-reveal-product>
         <div class="demo-shell">
           <aside class="demo-nav">
             <img src="/anonymail.png" alt="" />
@@ -50,58 +50,58 @@ const betaVersion = 'v0.1.1';
       </div>
     </section>
 
-    <section class="trust-strip" data-reveal><div class="wrap"><span>Explicit website access</span><span>Separate mailbox and signup secrets</span><span>Automatic expiry</span><span>Powered by Mail.tm</span></div></section>
+    <section class="trust-strip" data-reveal-group><div class="wrap"><span data-reveal-item data-reveal-step="0">Explicit website access</span><span data-reveal-item data-reveal-step="1">Separate mailbox and signup secrets</span><span data-reveal-item data-reveal-step="2">Automatic expiry</span><span data-reveal-item data-reveal-step="3">Powered by Mail.tm</span></div></section>
 
-    <section id="how" class="section wrap" data-reveal>
-      <p class="kicker"><span></span> A smaller privacy ritual</p>
-      <div class="section-heading"><h2>From signup to verification without changing context.</h2><p>Anonymail stays intentionally narrow: one inbox, one clear action, and no permanent access to every site you visit.</p></div>
+    <section id="how" class="section wrap" data-reveal-group>
+      <p class="kicker" data-reveal-item data-reveal-step="0"><span></span> A smaller privacy ritual</p>
+      <div class="section-heading"><h2 data-reveal-item data-reveal-step="1">From signup to verification without changing context.</h2><p data-reveal-item data-reveal-step="2">Anonymail stays intentionally narrow: one inbox, one clear action, and no permanent access to every site you visit.</p></div>
       <div class="feature-grid">
-        <article>
+        <article data-reveal-item data-reveal-step="3">
           <video src="/media/right-click-fill.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Right-clicking a signup field and choosing Fill with Anonymail"></video>
           <div><b>Right-click fill</b><p>Access begins only after your explicit action. Anonymail fills the enabled signup fields locally.</p></div>
         </article>
-        <article>
+        <article data-reveal-item data-reveal-step="4">
           <video src="/media/side-panel-or-tab.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Anonymail inbox open in Chrome’s side panel"></video>
           <div><b>Side panel or tab</b><p>Keep the inbox across tabs in the current Chrome window, or use the spacious dashboard.</p></div>
         </article>
-        <article>
+        <article data-reveal-item data-reveal-step="5">
           <video src="/media/short-memory.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Choosing a short mailbox lifetime in Anonymail settings"></video>
           <div><b>Matched memory</b><p>Choose 10 minutes, 1 hour, 6 hours, 24 hours, or until deleted. Signup passwords match that mailbox lifetime while staying session-only.</p></div>
         </article>
       </div>
     </section>
 
-    <section id="install" class="install-section" data-reveal data-nav-theme="dark">
+    <section id="install" class="install-section" data-reveal-group data-nav-theme="dark">
       <div class="wrap">
         <div class="tutorial-intro">
-          <p class="kicker light"><span></span> Installation tutorial</p>
-          <h2>Install Anonymail in Developer Mode.</h2>
-          <p>Follow this short video to load the free Chrome beta.</p>
+          <p class="kicker light" data-reveal-item data-reveal-step="0"><span></span> Installation tutorial</p>
+          <h2 data-reveal-item data-reveal-step="1">Install Anonymail in Developer Mode.</h2>
+          <p data-reveal-item data-reveal-step="2">Follow this short video to load the free Chrome beta.</p>
         </div>
-        <div class="tutorial-player">
+        <div class="tutorial-player" data-reveal-item data-reveal-step="3">
           <iframe src="https://www.youtube-nocookie.com/embed/ucaRQlQ_Ojg?rel=0" title="How to install the Anonymail Developer Mode beta" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <div class="tutorial-actions"><p>Watch the tutorial, download the latest beta ZIP, then choose <strong>Load unpacked</strong>.</p><a class="button inverse" href={downloadHref} download>Download latest beta</a></div>
+        <div class="tutorial-actions" data-reveal-item data-reveal-step="4"><p>Watch the tutorial, download the latest beta ZIP, then choose <strong>Load unpacked</strong>.</p><a class="button inverse" href={downloadHref} download>Download latest beta</a></div>
       </div>
     </section>
 
-    <section class="privacy-section wrap" data-reveal>
-      <div><p class="kicker"><span></span> Privacy promise</p><h2>Your browsing stays in your browser.</h2></div>
-      <div><p>Anonymail does not collect analytics, browsing history, signup URLs, or form contents. Mailbox operations go directly from the extension to Mail.tm.</p><a href="/privacy">Read the plain-English privacy policy →</a></div>
+    <section class="privacy-section wrap" data-reveal-group>
+      <div><p class="kicker" data-reveal-item data-reveal-step="0"><span></span> Privacy promise</p><h2 data-reveal-item data-reveal-step="1">Your browsing stays in your browser.</h2></div>
+      <div data-reveal-item data-reveal-step="2"><p>Anonymail does not collect analytics, browsing history, signup URLs, or form contents. Mailbox operations go directly from the extension to Mail.tm.</p><a href="/privacy">Read the plain-English privacy policy →</a></div>
     </section>
   </main>
 
   <footer class="wrap"><a class="logo" href="/"><img src="/anonymail.png" alt="" /><span>Anonymail</span></a><p>Private signups, quietly handled.</p><div><a href="/privacy">Privacy</a><a href="https://mail.tm" target="_blank" rel="noreferrer">Mail.tm</a></div></footer>
 
   <script>
-    const revealItems = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    const revealGroups = document.querySelectorAll<HTMLElement>('[data-reveal-group]');
     document.documentElement.classList.add('reveal-ready');
 
     const revealObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) entry.target.classList.toggle('is-visible', entry.isIntersecting);
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+    revealGroups.forEach((group) => revealObserver.observe(group));
 
     const header = document.querySelector<HTMLElement>('[data-adaptive-nav]');
     const darkSections = [...document.querySelectorAll<HTMLElement>('[data-nav-theme="dark"]')];
