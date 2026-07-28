@@ -376,7 +376,7 @@ function EmptyInbox({ loading, onCreate }: { loading: boolean; onCreate: () => v
       ) : (
         <div>
           <h1>No disposable email yet.</h1>
-          <p>Right-click a signup field, or create one here.</p>
+          <p><strong>Right-click any signup form</strong> to fill it instantly, or create one here.</p>
           <button className="primary-button" onClick={onCreate}>Create disposable email</button>
         </div>
       )}

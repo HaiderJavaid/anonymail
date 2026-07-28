@@ -29,7 +29,7 @@ Started: 2026-07-24 · Updated: 2026-07-26
 - Added the requested three landing feature clips and relaxed main-heading letter spacing.
 - Moved one-time Settings onboarding from install time to the first toolbar/context-menu activation so the side panel can open within Chrome's gesture rule.
 - Reduced hero heading size and replaced install cards with the requested privacy-enhanced YouTube tutorial player.
-- Enabled Chrome's native action-click side-panel behavior and added a first-install setup dashboard fallback for the browser's gesture restriction.
+- Enabled Chrome's native action-click side-panel behavior; installation now waits for a toolbar gesture and opens first-run setup in the side panel without creating a dashboard tab.
 - Made mailbox deletion and the new Save settings button return to Inbox.
 - Replaced the empty mailbox copy with a concise right-click/manual creation prompt and “Create disposable email.”
 - Removed inbox search from the extension and landing mockup.

@@ -54,7 +54,7 @@ describe('InboxApp', () => {
     render(<InboxApp surface="sidepanel" />);
     await waitFor(() => expect(screen.getByRole('button', { name: 'Create disposable email' })).toBeVisible());
     expect(screen.getByRole('heading', { name: 'No disposable email yet.' })).toBeVisible();
-    expect(screen.getByText('Right-click a signup field, or create one here.')).toBeVisible();
+    expect(screen.getByText('Right-click any signup form')).toBeVisible();
     expect(screen.queryByText(/active disposable address/i)).not.toBeInTheDocument();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
   });

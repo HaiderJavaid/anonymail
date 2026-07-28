@@ -33,7 +33,7 @@ done:
   - Extension and landing-page branding use the refreshed metallic mask-envelope icon.
   - Landing feature cards use the requested clips for right-click fill, side-panel use, and mailbox lifetime controls; heading tracking is relaxed.
   - The install section uses the requested privacy-enhanced YouTube tutorial player; hero type is slightly smaller.
-  - Toolbar activation uses Chrome's native side-panel behavior; first install opens a setup dashboard because Chrome requires a gesture before opening a side panel.
+  - Toolbar activation uses Chrome's native side-panel behavior; installation no longer opens a dashboard, and first setup waits for a toolbar click before opening in the side panel.
   - Deleting a mailbox and saving settings return to Inbox; empty state copy now explains right-click creation and uses “Create disposable email.”
   - Search was removed from extension surfaces and the landing mockup.
   - The landing installation tutorial is smaller, centered, and has a centered download instruction/action stack.

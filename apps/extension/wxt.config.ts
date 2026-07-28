@@ -7,7 +7,7 @@ export default defineConfig({
   manifest: {
     name: 'Anonymail',
     description: 'Create a disposable inbox and fill signup forms without leaving the page.',
-    version: '0.1.0',
+    version: '0.1.1',
     minimum_chrome_version: '116',
     permissions: ['activeTab', 'scripting', 'contextMenus', 'sidePanel', 'storage', 'alarms'],
     host_permissions: ['https://api.mail.tm/*'],

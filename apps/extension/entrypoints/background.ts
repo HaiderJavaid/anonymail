@@ -59,7 +59,6 @@ export default defineBackground(() => {
       cachedInitialSetupPending = true;
       void setInitialSetupPending(true);
       void configureActionBehavior('side-panel', true);
-      void openInstallSetupDashboard();
     }
   });
 
@@ -124,14 +123,6 @@ async function openDashboard(active: boolean): Promise<void> {
     }
   }
   const tab = await chrome.tabs.create({ url: chrome.runtime.getURL('/dashboard.html'), active });
-  if (tab.id !== undefined) await chrome.storage.session.set({ dashboardTabId: tab.id });
-}
-
-async function openInstallSetupDashboard(): Promise<void> {
-  const tab = await chrome.tabs.create({
-    url: chrome.runtime.getURL('/dashboard.html?view=settings&setup=1'),
-    active: true
-  });
   if (tab.id !== undefined) await chrome.storage.session.set({ dashboardTabId: tab.id });
 }
 

@@ -14,4 +14,4 @@
 - Styled HTML email is isolated in a sandboxed iframe. Sanitized inline CSS is allowed; scripts, forms, remote images, external resources, and attachments remain blocked.
 - Signup passwords stay in trusted session storage, follow the active mailbox lifetime, and clear with the mailbox; “Until deleted” remains limited to the current Chrome session.
 - First activation after install opens the side panel in Settings once. Chrome requires that user gesture and does not allow extensions to pin themselves.
-- Chrome's native `openPanelOnActionClick` behavior handles side-panel toolbar activation. Since installation is not a valid side-panel gesture, first install opens a setup dashboard fallback.
+- Chrome's native `openPanelOnActionClick` behavior handles side-panel toolbar activation. Since installation is not a valid side-panel gesture, Anonymail waits for the user's first toolbar click and opens setup inside the side panel.
